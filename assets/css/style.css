@@ -23,8 +23,8 @@
 }
 
 * {
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: var(--text-primary);
 }
@@ -37,13 +37,6 @@
   flex-direction: column;
 }
 
-body {
-  background-color: #f3f5f7;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 header {
   display: flex;
   justify-content: center;
@@ -53,18 +46,27 @@ header {
   padding: 41px 0;
 }
 
+body {
+  background-color: #f3f5f7;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
 .header-content {
+  width: 100%;
   justify-content: space-between;
 }
 
 .container {
   display: flex;
-  width: 900px;
+  max-width: 900px;
 }
 
 .logo,
 #blog {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .header-topo {
@@ -74,7 +76,7 @@ header {
 
 .search-bar input {
   font-family: var(--text-secondary);
-  font-size: 18px;
+  font-size: 1.625rem;
   color: var(--white);
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
@@ -99,34 +101,51 @@ main {
   justify-content: center;
 }
 
-.cards-section {
+article.cards-section {
   margin-top: 100px;
 }
 
-.card {
+.cards-section .card {
   background-color: var(--white);
   padding: 24px;
   margin-bottom: 50px;
 }
 
-.card-top {
+.card .card-top {
   display: flex;
   justify-content: space-between;
   margin-bottom: 22px;
 }
 
-.card-data {
+.card-top .card-data {
   color: var(--text);
-  font-size: 16px;
 }
 
-.card-text h1 {
-  font-size: 26px;
+.card .card-text h1 {
+  font-size: 1.625rem;
   color: var(--title);
   margin-bottom: 6px;
 }
 
-.card-text p {
-  font-size: 18px;
+.card .card-text p {
+  font-size: 1.125rem;
   color: var(--text);
+}
+
+@media (max-width: 960px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0 20px;
+  }
+
+  article.cards-section {
+    margin-top: 40px;
+  }
+
+  .cards-section .card {
+    margin-bottom: 20px;
+  }
 }
